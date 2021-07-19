@@ -13,49 +13,89 @@
         width: 422px;
 
         &-header{
-            background: green;
             color: #fff;
+            font-weight: 700;
             width: 100%;
 
             display: flex;
             justify-content: space-between;
 
+            .title{
+                font-size: 21px;
+                display: flex;
+                align-items: flex-end;
+            }
+
             .selector{
                 display: flex;
 
+                span{
+                    font-size: 10px;
+
+                    display: inline-flex;
+                    align-items: flex-end;
+                }
+
                 .buttons-wrap {
-                    margin-left: 10px;
+                    margin-left: 18px;
 
                     .numbers{
+                        font-size: 10px;
                         padding: 0 5px;
-                    }
-
-                    .buttons{
-                        background: #232c43;
-                        border-radius: 20px;
-                        padding: 5px;
 
                         align-items: center;
                         display: flex;
+                        justify-content: space-between;
+                    }
+
+                    .buttons{
+                        background: #252d44;
+                        border-radius: 20px;
+                        padding: 5px;
+                        width: 44px;
+
+                        align-items: center;
+                        display: flex;
+                        justify-content: space-between;
 
                         button{
                             background: red;
                             border: none;
                             border-radius: 50%;
-                            height: 10px;
-                            width: 10px;
+                            cursor: pointer;
+                            height: 11px;
+                            width: 11px;
                         }
                     }
-
                 }
+            }
+        }
+
+        &-display{
+            box-sizing: border-box;
+            background: #181f32;
+            border-radius: 10px;
+            height: 100px;
+            margin-top: 23px;
+            padding: 28px;
+            width: 100%;
+
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+
+            p{
+                color: #fff;
+                font-size: 38px;
+                font-weight: 700;
             }
         }
 
         &-body{
             box-sizing: border-box;
-            background: #232c43;
+            background: #252d44;
             border-radius: 10px;
-            margin-top: 24px;
+            margin-top: 20px;
             padding: 25px;
             width: 100%;
 
@@ -73,6 +113,7 @@
                     border: none;
                     color: #444956;
                     cursor: pointer;
+                    font-family: "spartan";
                     font-size: 32px;
                     font-weight: 700;
                     height: 60px;

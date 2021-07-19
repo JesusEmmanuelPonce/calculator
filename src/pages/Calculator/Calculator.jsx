@@ -30,6 +30,11 @@ const Calculator = () => {
                         </div>
                     </div>
                 </div>
+                <div className="calc__main-wrapper-display">
+                    <p>
+                        999,981
+                    </p>
+                </div>
                 <div className="calc__main-wrapper-body">
                     <div className="row">
                         <button>7</button>
