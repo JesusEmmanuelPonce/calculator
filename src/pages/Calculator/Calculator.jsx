@@ -35,7 +35,7 @@ const Calculator = () => {
                         <button>7</button>
                         <button>8</button>
                         <button>9</button>
-                        <button>DEL</button>
+                        <button className="option">DEL</button>
                     </div>
                     <div className="row">
                         <button>4</button>
@@ -50,8 +50,8 @@ const Calculator = () => {
                         <button>-</button>
                     </div>
                     <div className="row">
-                        <button>RESET</button>
-                        <button>=</button>
+                        <button className="option s-big">RESET</button>
+                        <button className="equal">=</button>
                     </div>
                 </div>
             </div>

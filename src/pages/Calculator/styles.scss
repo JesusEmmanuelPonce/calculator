@@ -1,6 +1,6 @@
 .calc__main{
     background: #3a4764;
-    min-height: 100vh;
+    height: 100vh;
     padding: 0;
     width: 100%;
 
@@ -9,6 +9,7 @@
 
     &-wrapper{
         height: 90px;
+        margin-top: 60px;
         width: 422px;
 
         &-header{
@@ -67,7 +68,13 @@
                 }
 
                 button{
+                    background: #eae3db;
                     border-radius: 12px;
+                    border: none;
+                    color: #444956;
+                    cursor: pointer;
+                    font-size: 32px;
+                    font-weight: 700;
                     height: 60px;
                     margin-right: 18px;
                     width: 79px;
@@ -76,7 +83,23 @@
                         margin-right: 0;
                     }
                 }
+
+                .option{
+                    background: #647299;
+                    color: #fcffff;
+                    font-size: 21px;
+                }
+
+                .s-big{
+                    width: 176px;
+                }
                 
+                .equal{
+                    background: #d13f30;
+                    color: #fcffff;
+                    font-size: 21px;
+                    width: 176px;
+                }
             }
         }
     }
