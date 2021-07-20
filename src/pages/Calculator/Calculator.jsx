@@ -1,11 +1,10 @@
 import React from 'react';
-import "./styles.scss";
 
 const Calculator = () => {
     return (
-        <div className="calc__main">
-            <div className="calc__main-wrapper">
-                <div className="calc__main-wrapper-header">
+        <div className="calc__main-purple">
+            <div className="calc__main-purple-wrapper">
+                <div className="calc__main-purple-wrapper-header">
                     <div className="title">
                         calc
                     </div>
@@ -30,12 +29,12 @@ const Calculator = () => {
                         </div>
                     </div>
                 </div>
-                <div className="calc__main-wrapper-display">
+                <div className="calc__main-purple-wrapper-display">
                     <p>
                         999,981
                     </p>
                 </div>
-                <div className="calc__main-wrapper-body">
+                <div className="calc__main-purple-wrapper-body">
                     <div className="row">
                         <button>7</button>
                         <button>8</button>
