@@ -65,6 +65,14 @@
                             cursor: pointer;
                             height: 11px;
                             width: 11px;
+
+                            &.selected{
+                                background: #d13e33;
+                            }
+
+                            &.no-selected{
+                                background: none;
+                            }
                         }
                     }
                 }
@@ -128,6 +136,10 @@
                     height: 60px;
                     margin-right: 18px;
                     width: 79px;
+
+                    &:focus{
+                        outline: none;
+                    }
 
                     &:last-child{
                         margin-right: 0;

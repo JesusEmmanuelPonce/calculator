@@ -1,4 +1,7 @@
-import React from 'react';
+import React, {
+    useState,
+    useRef,
+} from 'react';
 import { bindActionCreators } from 'redux';
 import { connect } from 'react-redux';
 
@@ -6,7 +9,19 @@ import { changeTheme } from '../../store/actions/CalculatorActions';
 
 const Calculator = ({ theme, changeTheme }) => {
 
-    console.log(theme);
+    const inputRef = useRef();
+
+    const [amount, setAmount] = useState("");
+
+    const changeCalc = ({ target: { value } }) => {
+        setAmount(value);
+        inputRef.current.focus();
+    };
+
+    const handleKey = key => {
+        setAmount(prevState => (prevState + key))
+        inputRef.current.focus();
+    }
 
     return (
         <div className={`calc__main-${theme}`}>
@@ -28,12 +43,15 @@ const Calculator = ({ theme, changeTheme }) => {
                             <div className="buttons">
                                 <button
                                     onClick={() => changeTheme("dark")}
+                                    className={theme === "dark" ? "selected" : "no-selected"}
                                 />
                                 <button
                                     onClick={() => changeTheme("light")}
+                                    className={theme === "light" ? "selected" : "no-selected"}
                                 />
                                 <button
                                     onClick={() => changeTheme("purple")}
+                                    className={theme === "purple" ? "selected" : "no-selected"}
                                 />
                             </div>
                         </div>
@@ -41,26 +59,51 @@ const Calculator = ({ theme, changeTheme }) => {
                 </div>
                 <div className={`calc__main-${theme}-wrapper-display`}>
                     <input
-                        type="text"
+                        autoFocus
+                        placeholder="0"
+                        autoComplete="off"
+                        type="number"
+                        name="amount"
+                        onChange={changeCalc}
+                        value={amount}
+                        ref={inputRef}
                     />
                 </div>
                 <div className={`calc__main-${theme}-wrapper-body`}>
                     <div className="row">
-                        <button>7</button>
-                        <button>8</button>
-                        <button>9</button>
+                        <button
+                            onClick={() => handleKey("7")}
+                        >7</button>
+                        <button
+                            onClick={() => handleKey("8")}
+                        >8</button>
+                        <button
+                            onClick={() => handleKey("9")}
+                        >9</button>
                         <button className="option">DEL</button>
                     </div>
                     <div className="row">
-                        <button>4</button>
-                        <button>5</button>
-                        <button>6</button>
+                        <button
+                            onClick={() => handleKey("4")}
+                        >4</button>
+                        <button
+                            onClick={() => handleKey("5")}
+                        >5</button>
+                        <button
+                            onClick={() => handleKey("6")}
+                        >6</button>
                         <button>+</button>
                     </div>
                     <div className="row">
-                        <button>1</button>
-                        <button>2</button>
-                        <button>3</button>
+                        <button
+                            onClick={() => handleKey("1")}
+                        >1</button>
+                        <button
+                            onClick={() => handleKey("2")}
+                        >2</button>
+                        <button
+                            onClick={() => handleKey("3")}
+                        >3</button>
                         <button>-</button>
                     </div>
                     <div className="row">

@@ -14,3 +14,13 @@ p{
   padding: 0;
   margin: 0;
 }
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-out-spin-button{
+  appearance: none;
+  margin: 0;
+}
+
+::placeholder {
+  color: #fff;
+}
