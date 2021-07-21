@@ -23,6 +23,16 @@ const Calculator = ({ theme, changeTheme }) => {
         inputRef.current.focus();
     }
 
+    const handleReset = () => {
+        setAmount("");
+    }
+
+    const handleDel = () => {
+        setAmount(prevState => {
+            return prevState.slice(0, -1)
+        })
+    }
+
     return (
         <div className={`calc__main-${theme}`}>
             <div className={`calc__main-${theme}-wrapper`}>
@@ -80,7 +90,10 @@ const Calculator = ({ theme, changeTheme }) => {
                         <button
                             onClick={() => handleKey("9")}
                         >9</button>
-                        <button className="option">DEL</button>
+                        <button 
+                            className="option"
+                            onClick={handleDel}
+                        >DEL</button>
                     </div>
                     <div className="row">
                         <button
@@ -107,8 +120,15 @@ const Calculator = ({ theme, changeTheme }) => {
                         <button>-</button>
                     </div>
                     <div className="row">
-                        <button className="option s-big">RESET</button>
-                        <button className="equal">=</button>
+                        <button
+                            className="option s-big"
+                            onClick={handleReset}
+                        >RESET</button>
+                        <button className="equal
+                        
+                        const handleDel = () => {
+
+                        }">=</button>
                     </div>
                 </div>
             </div>
