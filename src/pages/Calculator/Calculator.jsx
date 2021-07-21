@@ -1,10 +1,17 @@
 import React from 'react';
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
 
-const Calculator = () => {
+import { changeTheme } from '../../store/actions/CalculatorActions';
+
+const Calculator = ({ theme, changeTheme }) => {
+
+    console.log(theme);
+
     return (
-        <div className="calc__main-purple">
-            <div className="calc__main-purple-wrapper">
-                <div className="calc__main-purple-wrapper-header">
+        <div className={`calc__main-${theme}`}>
+            <div className={`calc__main-${theme}-wrapper`}>
+                <div className={`calc__main-${theme}-wrapper-header`}>
                     <div className="title">
                         calc
                     </div>
@@ -19,22 +26,25 @@ const Calculator = () => {
                                 <span>3</span>
                             </div>
                             <div className="buttons">
-                                <button>
-                                </button>
-                                <button>
-                                </button>
-                                <button>
-                                </button>
+                                <button
+                                    onClick={() => changeTheme("dark")}
+                                />
+                                <button
+                                    onClick={() => changeTheme("light")}
+                                />
+                                <button
+                                    onClick={() => changeTheme("purple")}
+                                />
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="calc__main-purple-wrapper-display">
-                    <p>
-                        999,981
-                    </p>
+                <div className={`calc__main-${theme}-wrapper-display`}>
+                    <input
+                        type="text"
+                    />
                 </div>
-                <div className="calc__main-purple-wrapper-body">
+                <div className={`calc__main-${theme}-wrapper-body`}>
                     <div className="row">
                         <button>7</button>
                         <button>8</button>
@@ -63,4 +73,16 @@ const Calculator = () => {
     )
 }
 
-export default Calculator
+const mapStateToProps = ({ calculator }) => ({
+    theme: calculator?.theme ?? "",
+});
+
+const mapDispatchToProps = (dispatch) =>
+  bindActionCreators(
+    {
+        changeTheme,
+    },
+    dispatch,
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(Calculator);
